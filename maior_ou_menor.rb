@@ -11,11 +11,12 @@ def da_boas_vindas
 	puts "\n\n\n\n\n"
 
 	puts "Começaremos o jogo para você, #{nome}"
+	nome
 end
 
 def pede_dificuldade
 	puts "Qual o nível de dificuldade que deseja? (1 fácil, 5 difícil)"
-	dificuldade = gets.to_i
+	gets.to_i
 end
 
 def sorteia_numero_secreto(dificuldade)
@@ -102,9 +103,8 @@ for tentativa in 1..limite_de_tentativas
 		break
 	end
 
-	pontos_a_perder = (chute - numero_secreto).abs / 2
+	pontos_a_perder = (chute - numero_secreto).abs / 2.0
 	pontos_ate_agora = pontos_ate_agora - pontos_a_perder
-
 
 	if verifica_se_acertou numero_secreto, chute
 		break
